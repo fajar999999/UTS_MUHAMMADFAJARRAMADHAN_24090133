@@ -1,0 +1,113 @@
+/* Import Font & Ikon */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: grey;
+    min-height: 100vh;
+}
+
+/* =========================================================
+   SIDEBAR (Dashboard & Products Layout) - Sesuai Desain
+   ========================================================= */
+.app-layout {
+    display: flex;
+}
+
+.sidebar {
+    width: 60px;
+    background-color:darkblue;
+    padding: 20px 0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column; /* Untuk menempatkan Logout di bawah */
+    align-items: center;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    font-size: 1.2rem;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    opacity: 1;
+    background-color: #444;
+}
+
+/* Flex-grow untuk mendorong ikon Logout ke bawah */
+.sidebar > div {
+    flex-grow: 1; 
+}
+
+/* =========================================================
+   MAIN CONTENT (Dashboard & Products)
+   ========================================================= */
+.main-content {
+    margin-left: 60px;
+    padding: 40px;
+    width: calc(100% - 60px);
+}
+
+.page-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+/* Styling Tombol Umum */
+.btn {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+/* Tombol Primary */
+.primary-btn {
+    background-color: #333;
+    color: #ffffff;
+}
+
+/* Media Query untuk Responsif */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+}
